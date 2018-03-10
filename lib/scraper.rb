@@ -35,6 +35,8 @@ end
     end
     #quote = student_page.css(".vitals-text-container").css(".profile-quote").text
     #profile_page[:profile_quote] = quote
+    bio = student_page.css(".description-holder").css("p").text
+    profile_page[:bio] = bio
     profile_page
   end
 
