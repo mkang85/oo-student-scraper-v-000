@@ -30,7 +30,7 @@ end
       elsif  link.attr("href").value.include?("linkedin")
         profile_page[:linkedin] = link
       else
-        profile_page[:blog] = link
+        profile_page[:blog] = link.attr("href").value
       end
     end
     quote = student_page.css(".vitals-text-container").css(".profile-quote").text
