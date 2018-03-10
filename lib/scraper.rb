@@ -25,9 +25,9 @@ end
     links.each do |link|
       if link.attr("href").include?("twitter")
         profile_page[:twitter] = link.attr("href")
-      elsif  link.attr("href").value.include?("git")
+      elsif  link.attr("href").include?("git")
         profile_page[:github] = link.attr("href")
-      elsif  link.attr("href").value.include?("linkedin")
+      elsif  link.attr("href").include?("linkedin")
         profile_page[:linkedin] = link.attr("href")
       else
         profile_page[:blog] = link.attr("href").value
