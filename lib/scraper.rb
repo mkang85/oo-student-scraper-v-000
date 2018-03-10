@@ -20,7 +20,7 @@ end
   def self.scrape_profile_page(profile_url)
     profile_page = {}
     student_page = Nokogiri::HTML(open("#{profile_url}"))
-    binding.pry
+    #binding.pry
     links = student_page.css(".social-icon-container a")
     links.each do |link|
       if link.attr("href").include?("twitter")
@@ -33,8 +33,8 @@ end
         profile_page[:blog] = link
       end
     end
-    #quote = student_page.css(".vitals-text-container").css(".profile-quote").text
-    #profile_page[:profile_quote] = quote
+    quote = student_page.css(".vitals-text-container").css(".profile-quote").text
+    profile_page[:profile_quote] = quote
     bio = student_page.css(".description-holder").css("p").text
     profile_page[:bio] = bio
     profile_page
