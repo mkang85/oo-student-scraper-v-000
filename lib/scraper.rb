@@ -33,8 +33,8 @@ end
         profile_page[:blog] = link
       end
     end
-    bio = student_page.css(".vitals-text-container").css(".profile-quote").text
-    profile_page[:bio] = bio
+    #bio = student_page.css(".vitals-text-container").css(".profile-quote").text
+    #profile_page[:bio] = bio
     profile_page
   end
 
