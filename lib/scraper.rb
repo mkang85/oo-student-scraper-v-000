@@ -21,16 +21,16 @@ end
     profile_page = {}
     student_page = Nokogiri::HTML(open("#{profile_url}"))
     #binding.pry
-    links = student_page.css(".social-icon-container a")
+    links = student_page.css(".social-icon-container a").attr("href")
     links.each do |link|
-      if link.attr("href").include?("twitter")
-        profile_page[:twitter] = link.attr("href")
-      elsif  link.attr("href").include?("git")
-        profile_page[:github] = link.attr("href")
-      elsif  link.attr("href").include?("linkedin")
-        profile_page[:linkedin] = link.attr("href")
+      if link.include?("twitter")
+        profile_page[:twitter] = link
+      elsif  link.include?("git")
+        profile_page[:github] = link
+      elsif  link.include?("linkedin")
+        profile_page[:linkedin] = link
       else
-        profile_page[:blog] = link.attr("href")
+        profile_page[:blog] = link
       end
     end
     quote = student_page.css(".vitals-text-container").css(".profile-quote").text
