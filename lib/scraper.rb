@@ -23,12 +23,12 @@ end
     #binding.pry
     links = student_page.css(".social-icon-container a")
     links.each do |link|
-      if link.attr("href").value.include?("twitter")
-        profile_page[:twitter] = link
+      if link.attr("href").include?("twitter")
+        profile_page[:twitter] = link.attr("href")
       elsif  link.attr("href").value.include?("git")
-        profile_page[:github] = link
+        profile_page[:github] = link.attr("href")
       elsif  link.attr("href").value.include?("linkedin")
-        profile_page[:linkedin] = link
+        profile_page[:linkedin] = link.attr("href")
       else
         profile_page[:blog] = link.attr("href").value
       end
