@@ -33,6 +33,7 @@ end
         profile_page[:blog] = link
       end
     end
+    profile_page
   end
 
 end
