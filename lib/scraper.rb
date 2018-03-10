@@ -19,7 +19,7 @@ end
 
   def self.scrape_profile_page(profile_url)
     student_page = Nokogiri::HTML(open("#{profile_url}"))
-    
+    links = student_page(".social-icon-container a")
   end
 
 end
